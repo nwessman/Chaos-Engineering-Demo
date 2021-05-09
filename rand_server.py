@@ -4,6 +4,7 @@ import random
 import sys
 
 port = 8002
+name = "server"
 
 class Root:
   @cherrypy.expose
@@ -14,9 +15,9 @@ class Root:
       content = params["content"]
       print("content " , content)
       try:
-        result = {"server":str(port), "content":str(random.randint(0,int(content)))}
+        result = {"server":name+" ("+str(port)+")", "content":str(random.randint(0,int(content)))}
       except ValueError:
-        result = {"server":str(port), "content":"error: Invalid number"}
+        result = {"server":name+" ("+str(port)+")", "content":"error: Invalid number"}
       
       return result
 
@@ -34,6 +35,7 @@ def run():
 
 if __name__ == '__main__':
   if(len(sys.argv) != 2):
-    print("Please specify port: python server _portnumber_")
+    print("Please specify port and name of server: python server _portnumber_ _servername_")
   port = int(sys.argv[1])
+  name = sys.argv[2]
   run()

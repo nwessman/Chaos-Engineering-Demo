@@ -31,7 +31,7 @@ def main():
     "server.socket_port": 8001
   })
   PIDFile(cherrypy.engine, "microservice1.pid").subscribe()
-  #Daemonizer(cherrypy.engine).subscribe()
+  Daemonizer(cherrypy.engine).subscribe()
   cherrypy.quickstart(Root())
 
 if __name__ == '__main__':
