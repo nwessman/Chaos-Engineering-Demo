@@ -21,7 +21,7 @@ class Root:
       raise cherrypy.HTTPError(500, r.text)
 
     cherrypy.response.headers["Content-Type"] = "text/plain"
-    return "response from service {}: {}\n".format(r.json()["server"],r.json()["content"])
+    return "response from service: {}: {}\n".format(r.json()["server"],r.json()["content"])
 
   
 def main():
@@ -30,7 +30,7 @@ def main():
     "log.screen": True,
     "server.socket_port": 8001
   })
-  PIDFile(cherrypy.engine, "req_rand.pid").subscribe()
+  PIDFile(cherrypy.engine, "require_rand.pid").subscribe()
   Daemonizer(cherrypy.engine).subscribe()
   cherrypy.quickstart(Root())
 

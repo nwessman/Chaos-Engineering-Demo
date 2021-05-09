@@ -34,7 +34,7 @@ def run():
 
 
 if __name__ == '__main__':
-  if(len(sys.argv) != 2):
+  if(len(sys.argv) != 3):
     print("Please specify port and name of server: python server _portnumber_ _servername_")
   port = int(sys.argv[1])
   name = sys.argv[2]

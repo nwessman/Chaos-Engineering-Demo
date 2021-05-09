@@ -15,7 +15,7 @@
                     "module": "os.path",
                     "func": "exists",
                     "arguments": {
-                        "path": "req_rand.pid"
+                        "path": "require_rand.pid"
                     }
                 }
             },
