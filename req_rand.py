@@ -30,7 +30,7 @@ def main():
     "log.screen": True,
     "server.socket_port": 8001
   })
-  PIDFile(cherrypy.engine, "microservice1.pid").subscribe()
+  PIDFile(cherrypy.engine, "req_rand.pid").subscribe()
   Daemonizer(cherrypy.engine).subscribe()
   cherrypy.quickstart(Root())
 

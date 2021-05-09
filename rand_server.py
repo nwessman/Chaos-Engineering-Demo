@@ -28,7 +28,7 @@ def run():
       "log.screen": True,
       "server.socket_port": port,
   })
-  PIDFile(cherrypy.engine, 'server'+str(port)+'.pid').subscribe()
+  PIDFile(cherrypy.engine, name+'.pid').subscribe()
   Daemonizer(cherrypy.engine).subscribe()
   cherrypy.quickstart(Root())
 
