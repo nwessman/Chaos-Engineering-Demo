@@ -13,7 +13,6 @@ class Root:
   def index(self) -> str:
       params = cherrypy.request.json
       content = params["content"]
-      print("content " , content)
       try:
         result = {"server":name+" ("+str(port)+")", "content":str(random.randint(0,int(content)))}
       except ValueError:

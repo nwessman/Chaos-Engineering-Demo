@@ -8,7 +8,7 @@
         "probes": [
             {
                 "type": "probe",
-                "name": "the-req_rand-service-must-be-running",
+                "name": "the-require_rand-service-must-be-running",
                 "tolerance": true,
                 "provider": {
                     "type": "python",
