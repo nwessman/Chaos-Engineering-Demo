@@ -77,7 +77,7 @@ After the Method stage the experiments checks if the systems still is in the ste
 
 
 ## Run the experiment
-To start the experiment first start the three microservices. 
+To start the experiment first start the three microservices. Start *require_rand_broken* instead of *require_rand* for a demonstration in failing the tests.
 ```
 chaos run experiment.json
 ```
