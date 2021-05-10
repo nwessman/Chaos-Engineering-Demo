@@ -51,20 +51,12 @@
             "name": "kill-primary-server",
             "provider": {
                 "type": "process",
-                "path": "kill",
-                "arguments": "$(<primary.pid)"
+                "path": "pkill",
+                "arguments": "--echo -F primary.pid"
             }
         }
     ],
     "rollbacks": [
-        {
-            "type": "action",
-            "name": "restart-primary-server",
-            "provider": {
-                "type": "process",
-                "path": "python3",
-                "arguments": "rand_server.py 8002 'primary'"
-            }
-        }
+
     ]
 }
