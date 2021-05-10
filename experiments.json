@@ -57,6 +57,14 @@
         }
     ],
     "rollbacks": [
-
+        {
+            "type": "action",
+            "name": "restart-primary-server",
+            "provider": {
+                "type": "process",
+                "path": "python3",
+                "arguments": "rand_server.py 8002 'primary'"
+            }
+        }
     ]
 }
