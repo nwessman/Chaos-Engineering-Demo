@@ -41,6 +41,16 @@ curl -k http://localhost:8001/index/10
 > response from service: 5
 ```
 
+## Turn off Microservices
+Since the Microservices are run in a background process they are usually not terminated by sending an interupt signal ```^C```. Instead run this command in the terminal:
+```
+kill $pid
+```  
+where $pid is the Process Identifier. To find what pid each microservice has run this command in the terminal:
+```
+ps x
+```
+and look for the services in the list.
 ## Chaos Testing Experiment
 Tests in Chaos Toolkit are called Experiments. Experiments build on three phases:
 
