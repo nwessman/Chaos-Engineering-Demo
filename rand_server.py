@@ -11,6 +11,7 @@ class Root:
   @cherrypy.tools.json_in()
   @cherrypy.tools.json_out()
   def index(self) -> str:
+      # Generates a number between 0 and a positive integer value recieved.
       params = cherrypy.request.json
       content = params["content"]
       try:
@@ -21,7 +22,8 @@ class Root:
       return result
 
 
-def run():
+def main():
+    # Setting up and running the server in a background process
   cherrypy.config.update({
       "environment": "production",
       "log.screen": True,
@@ -37,4 +39,4 @@ if __name__ == '__main__':
     print("Please specify port and name of server: python server _portnumber_ _servername_")
   port = int(sys.argv[1])
   name = sys.argv[2]
-  run()
+  main()

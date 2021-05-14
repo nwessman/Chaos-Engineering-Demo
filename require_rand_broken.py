@@ -1,3 +1,6 @@
+# Broken version of require_rand
+# Can be used to explore what the Chaos test looks like when failing.
+
 import cherrypy
 from cherrypy.process.plugins import Daemonizer, PIDFile
 import requests
